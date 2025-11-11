@@ -8,22 +8,22 @@ func main() {
 	var n1 uint
 	var n2 uint
 
-	fmt.Print("Введите размер первого массива (>0)")
+	fmt.Print("Введите размер первого множества(>0)")
 	fmt.Scan(&n1)
-	arr1 := make([]int, n1)
+	set1 := make([]int, n1)
 
-	for i := 0; i < int(n1); i++ {
-		fmt.Printf("Введите %d-ый элемент первого массива: ", i+1)
-		fmt.Scan(&arr1[i])
+	for i := range int(n1) {
+		fmt.Printf("Введите %d-ый элемент первого множества: ", i+1)
+		fmt.Scan(&set1[i])
 	}
 
-	fmt.Print("Введите размер второго массива (>0)")
+	fmt.Print("Введите размер второго множества (>0)")
 	fmt.Scan(&n2)
-	arr2 := make([]int, n2)
+	set2 := make([]int, n2)
 
-	for i := 0; i < int(n2); i++ {
-		fmt.Printf("Введите %d-ый элемент второго массива: ", i+1)
-		fmt.Scan(&arr2[i])
+	for i := range int(n2) {
+		fmt.Printf("Введите %d-ый элемент второго множества: ", i+1)
+		fmt.Scan(&set2[i])
 	}
 	var res []int
 	if n1 > n2 {
@@ -33,11 +33,11 @@ func main() {
 	}
 
 	hash := make(map[int]bool)
-	for _, val := range arr1 {
+	for _, val := range set1 {
 		hash[val] = true
 	}
 	i := 0
-	for _, val := range arr2 {
+	for _, val := range set2 {
 		if hash[val] {
 			res[i] = val
 			i++
