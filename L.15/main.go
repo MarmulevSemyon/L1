@@ -18,6 +18,11 @@ func someFunc() {
 	// justString теперь ссылается на те же данные, что и v
 	// len = 100, ptr = тот же ptr, что и у v
 	// не смотря на то, что сама переменная v "локальная" — её буфер не освобождается
+
+	// корректно можно создавать так:
+	justStringGood := string([]byte(v[:100]))
+	fmt.Printf("justStringGood in func\t|%s\t|%d\t|%p\t|%p\n", justStringGood, len(justStringGood), &justStringGood, (unsafe.StringData(justStringGood)))
+
 }
 
 func main() {
@@ -36,4 +41,5 @@ func main() {
 	// Хотя v выходит из области видимости, её буфер не освобождается сборщиком мусора,
 	// потому что justString продолжает ссылаться на этот буфер.
 	// полчучается, что маленькая подстрока (justString) удерживает в памяти весь большой массив v.
+
 }
