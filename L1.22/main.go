@@ -19,7 +19,8 @@ func main() {
 	fmt.Scan(&str_num2)
 	x1.SetString(str_num1, 10)
 	x2.SetString(str_num2, 10)
-	fmt.Println("вы ввели:\n\t\t", x1, "\n\t\t", x2)
+	fmt.Println("вы ввели:\n\t\t
+	", x1, "\n\t\t", x2)
 	fmt.Println("x1 * x2 =\t", res.Mul(x1, x2))
 	fmt.Println("x1 / x2 =\t", res.Div(x1, x2))
 	fmt.Println("x1 + x2 =\t", res.Add(x1, x2))
